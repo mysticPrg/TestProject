@@ -9,13 +9,3 @@ app.get('/', function(req, res) {
 });
 
 app.listen(8080);
-
-//var exec = require('child_process').execFile;
-//
-//var child = exec('./restart.sh', function (err, stdout, stderr) {
-//    console.log('stdout: ' + stdout);
-//    console.log('stderr: ' + stderr);
-//    if ( err ) {
-//        console.log('exec err: ' + err);
-//    }
-//});
