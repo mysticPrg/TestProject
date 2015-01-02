@@ -7,6 +7,5 @@ RUN mkdir /home/TestProject
 COPY ./ /home/TestProject
 
 WORKDIR /home/TestProject
-RUN npm install
 CMD node index
 #CMD /bin/bash
