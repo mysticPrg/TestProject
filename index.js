@@ -5,7 +5,7 @@
 var app = require('express')();
 
 app.get('/', function(req, res) {
-    res.send('Hello Docker World! with Auto Deploy Tool from mysticPrg :)');
+    res.send('Hello Docker World! with Auto Deploy Tool from mysticPrg! :)');
 });
 
 app.listen(8080);

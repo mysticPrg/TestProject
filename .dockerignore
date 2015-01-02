@@ -1,1 +1,3 @@
-ignoretest
+start.sh
+restart.sh
+stop.sh
