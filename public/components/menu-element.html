@@ -1,4 +1,4 @@
-<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/polymer/polymer.html">
 
 <polymer-element name="menu-element">
     <template>
@@ -7,7 +7,10 @@
 
     <script>
         Polymer({
-            author: 'mysticPrg'
+            author: 'mysticPrg',
+            ready: function() {
+                console.log('Success!');
+            }
         });
     </script>
 </polymer-element>
