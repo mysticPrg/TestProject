@@ -9,11 +9,7 @@ var app = express();
 //    res.send('I Missing U jenny... from mysticPrg T-T...');
 //});
 
-app.use(express.static(__dirname + '/public'));
-
-app.get('/', function (res, req) {
-   res.redirect('/public/index.html');
-});
+app.use(express.static(__dirname));
 
 app.listen(8080, function () {
     console.log('Server is Running...');

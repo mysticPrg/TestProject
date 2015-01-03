@@ -9,5 +9,8 @@ COPY ./ /home/TestProject
 
 WORKDIR /home/TestProject
 RUN npm install
+RUN npm install -g bower
+
+RUN bower install --allow-root
 CMD node index
 #CMD /bin/bash
