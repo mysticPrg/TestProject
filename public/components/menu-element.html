@@ -1,16 +1,24 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-shadow/paper-shadow.html">
 
 <polymer-element name="menu-element">
-    <template>
-        <span>This is menu Element authors {{author}}</span>
-    </template>
+	<template>
+		<div horizontal center-justified layout>
+			<p>
+				This is menu Element authors {{author}}
+			</p>
+		</div>
+	</template>
 
-    <script>
-        Polymer({
-            author: 'mysticPrg',
-            ready: function() {
-                console.log('Success!');
-            }
-        });
-    </script>
+	<script>
+		Polymer({
+			author: 'mysticPrg',
+			created: function () {
+				console.log('Menu Create')
+			},
+			ready: function () {
+				console.log('Menu Ready');
+			}
+		});
+	</script>
 </polymer-element>

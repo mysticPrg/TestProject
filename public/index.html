@@ -1,17 +1,59 @@
 <!DOCTYPE html>
 <html>
-<head lang="kr">
-    <meta charset="UTF-8">
-    <title>Welcome to My Service</title>
+	<head lang="kr">
+		<meta charset="UTF-8">
+		<title>Welcome to My Service</title>
 
-    <script src="../bower_components/webcomponentsjs/webcomponents.min.js"></script>
+		<!-- webcomponents.js -->
+		<script src="../bower_components/webcomponentsjs/webcomponents.min.js"></script>
 
-    <link rel="import" href="components/menu-element.html">
-</head>
-<body>
-    <p>Hello :)</p>
-    <menu-element></menu-element>
-    <p>Wow! I want this!</p>
-    <p>I miss u jenny T-T</p>
-</body>
+		<!-- official elements -->
+		<link rel="import" href="../bower_components/core-elements/core-elements.html">
+		<link rel="import" href="../bower_components/paper-elements/paper-elements.html">
+
+		<!-- custom components -->
+		<link rel="import" href="components/my-header.html">
+		<link rel="import" href="components/my-cards2.html">
+		<link rel="import" href="components/menu-element.html">
+		<link rel="import" href="components/btns-element.html">
+		<link rel="import" href="components/chks-element.html">
+
+		<style>
+			core-header-panel {
+				height: 100%;
+			}
+
+			[main] > core-toolbar {
+				background-color: #7986cb;
+				color: #ffffff;
+			}
+		</style>
+	</head>
+	<body fullbleed unresolved>
+
+		<core-drawer-panel>
+			<core-header-panel drawer>
+				<core-toolbar>
+					This is LeftMenu Area
+				</core-toolbar>
+
+				<div>
+				</div>
+			</core-header-panel>
+
+			<core-header-panel main>
+				<core-toolbar>
+					<my-header flex></my-header>
+				</core-toolbar>
+
+				<div>
+					<!--<my-cards2 flex></my-cards2>-->
+					<menu-element></menu-element>
+					<btns-element></btns-element>
+					<chks-element></chks-element>
+				</div>
+			</core-header-panel>
+		</core-drawer-panel>
+
+	</body>
 </html>

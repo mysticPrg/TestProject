@@ -1,0 +1,36 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-checkbox/paper-checkbox.html">
+<link rel="import" href="../../bower_components/core-label/core-label.html">
+
+<polymer-element name="chks-element">
+	<template>
+		<style>
+			paper-checkbox {
+				color: royalblue;
+				padding: 20px;
+			}
+		</style>
+
+		<div layout horizontal>
+			<template repeat="{{item in items}}">
+				<core-label center horizontal layout flex>
+					<paper-checkbox for></paper-checkbox>
+					<div flex>{{item}}</div>
+				</core-label>
+			</template>
+		</div>
+	</template>
+
+	<script>
+		Polymer({
+			ready: function () {
+				this.items = [
+					'Hwang',
+					'Lee',
+					'Lim'
+				];
+			}
+		});
+	</script>
+
+</polymer-element>

@@ -1,0 +1,40 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../bower_components/core-icons/core-icons.html">
+
+<polymer-element name="btns-element">
+	<template>
+		<style>
+			paper-button {
+				background: skyblue;
+				color: royalblue;
+			}
+		</style>
+
+		<div layout horizontal>
+			<paper-button raised flex one>
+				<core-icon icon="favorite"></core-icon>
+				heart
+			</paper-button>
+
+			<paper-button raised flex two>
+				<core-icon icon="delete"></core-icon>
+				delete
+			</paper-button>
+
+			<paper-button raised flex one>
+				<core-icon icon="home"></core-icon>
+				home
+			</paper-button>
+		</div>
+	</template>
+
+	<script>
+		Polymer({
+			ready: function() {
+
+			}
+		});
+	</script>
+
+</polymer-element>

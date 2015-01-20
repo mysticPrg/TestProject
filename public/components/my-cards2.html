@@ -1,0 +1,114 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<link rel="import" href="../../bower_components/core-pages/core-pages.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../bower_components/core-icons/core-icons.html">
+<link rel="import" href="../../bower_components/paper-shadow/paper-shadow.html">
+
+<polymer-element name="my-cards2">
+	<template>
+		<style>
+			paper-shadow {
+				height: 100px;
+				width: 500px;
+				margin: auto;
+			}
+
+			core-pages {
+				margin: auto;
+				width: 300px;
+				height: 300px;
+				border: 1px solid black;
+				-webkit-user-select: none;
+				border-radius: 5px;
+			}
+
+			core-pages > div {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				border-radius: inherit;
+			}
+
+			core-pages.fancy {
+				border: none;
+				margin-left: 2em;
+			}
+
+			core-pages.fancy > div {
+				opacity: 0;
+				-webkit-transform: translate3d(-100px, 0, 0) scale(0.9);
+				transform: translate3d(-100px, 0, 0) scale(0.9);
+				transition: all 1s cubic-bezier(.03,.56,.7,.98);
+				color: white;
+			}
+
+			core-pages.fancy > #one {
+				background-color: red;
+			}
+
+			core-pages.fancy > #two {
+				background-color: green;
+			}
+
+			core-pages.fancy > #three {
+				background-color: blue;
+			}
+
+			core-pages.fancy .core-selected + div {
+				transform: translate3d(100px, 0, 0) scale(0.5);
+			}
+
+			core-pages.fancy .core-selected {
+				opacity: 1;
+				transform: translateX(0);
+			}
+
+			core-pages.fancy div.begin {
+				transform: translate3d(100px, 0, 0) scale(0.5);
+			}
+
+
+		</style>
+
+		<paper-shadow layout vertical>
+			<core-pages id="pages" selected="0" flex class="fancy">
+				<div id="one">One</div>
+				<div id="two">Two</div>
+				<div id="three">Three</div>fancy
+			</core-pages>
+
+			<div layout horizontal>
+				<paper-button flex on-click="{{prev}}">
+					<core-icon icon="arrow-back"></core-icon>
+					prev
+				</paper-button>
+				<paper-button flex on-click="{{next}}">
+					<core-icon icon="arrow-forward"></core-icon>
+					next
+				</paper-button>
+			</div>
+		</paper-shadow>
+	</template>
+
+	<script>
+		Polymer({
+			pages: null,
+
+			ready: function () {
+				this.pages = this.$.pages;
+//				this.pages = document.querySelector('core-pages');
+			},
+			prev: function() {
+				this.pages.selected--;
+				if (this.pages.selected < 0) {
+					this.pages.selected = 2;
+				}
+
+			},
+			next: function() {
+				this.pages.selected = (this.pages.selected + 1) % this.pages.children.length;
+			}
+		});
+	</script>
+</polymer-element>
