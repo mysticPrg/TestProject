@@ -18,42 +18,19 @@
 		<link rel="import" href="components/btns-element.html">
 		<link rel="import" href="components/chks-element.html">
 
-		<style>
-			core-header-panel {
-				height: 100%;
-			}
+		<link rel="import" href="components/my-layout.html">
 
-			[main] > core-toolbar {
-				background-color: #7986cb;
-				color: #ffffff;
-			}
-		</style>
+
 	</head>
 	<body fullbleed unresolved>
-
-		<core-drawer-panel>
-			<core-header-panel drawer>
-				<core-toolbar>
-					This is LeftMenu Area
-				</core-toolbar>
-
-				<div>
-				</div>
-			</core-header-panel>
-
-			<core-header-panel main>
-				<core-toolbar>
-					<my-header flex></my-header>
-				</core-toolbar>
-
-				<div>
-					<!--<my-cards2 flex></my-cards2>-->
-					<menu-element></menu-element>
-					<btns-element></btns-element>
-					<chks-element></chks-element>
-				</div>
-			</core-header-panel>
-		</core-drawer-panel>
-
+		<my-layout>
+			<menu-element></menu-element> <!-- model binding -->
+			<div vertical layout flex>
+				Hello World!
+			</div>
+			<chks-element></chks-element> <!-- check box and ajax -->
+			<btns-element></btns-element> <!-- btns and flex layout -->
+			<!--<my-cards2 flex></my-cards2>-->
+		</my-layout>
 	</body>
 </html>

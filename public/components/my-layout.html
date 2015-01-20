@@ -1,0 +1,60 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<!-- official elements -->
+<link rel="import" href="../../bower_components/core-elements/core-elements.html">
+<link rel="import" href="../../bower_components/paper-elements/paper-elements.html">
+
+<polymer-element name="my-layout">
+	<template>
+		<style>
+			core-header-panel {
+				height: 100%;
+			}
+
+			[main] > core-toolbar {
+				background-color: #7986cb;
+				color: #ffffff;
+			}
+
+			[drawer], [drawer] > core-toolbar {
+				background-color: #ff5621;
+				color: #ffffff;
+			}
+
+			div.container {
+				min-height: 800px;
+			}
+		</style>
+
+		<core-drawer-panel>
+			<core-header-panel drawer mode="waterfall">
+				<core-toolbar>
+					LeftMenu
+				</core-toolbar>
+
+				<!-- This is menu contents area -->
+				<core-menu selected="0" class="menu-container">
+					<core-item icon="home" label="Index"></core-item>
+					<core-item icon="account-child" label="profile"></core-item>
+				</core-menu>
+
+			</core-header-panel>
+
+			<core-header-panel main mode="waterfall">
+				<core-toolbar>
+					<my-header flex></my-header>
+				</core-toolbar>
+
+				<div class="container" vertical layout>
+					<!-- This is main contents area -->
+					<content></content>
+				</div>
+			</core-header-panel>
+		</core-drawer-panel>
+
+	</template>
+
+	<script>
+		Polymer({});
+	</script>
+</polymer-element>
